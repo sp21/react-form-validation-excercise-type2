@@ -26,9 +26,9 @@ class EditEmployee extends Component {
         successMessage: ''
     }
     validateField(field, value) {
-        var form = { ...this.state.form };
-        var fieldValidity = { ...this.state.fieldValidity };
-        var formError = { ...this.state.formError };
+        var form = this.state.form ;
+        var fieldValidity = this.state.fieldValidity;
+        var formError = this.state.formError;
         form[field] = value;
         if (field === "ename") {
             if (value.length < 4) {
@@ -72,7 +72,7 @@ class EditEmployee extends Component {
         }
         this.setState({ form: form, formError: formError, fieldValidity: fieldValidity });
 
-        this.setState({ formValid: this.state.fieldValidity.enameValidity && this.state.fieldValidity.ageValidity && this.state.fieldValidity.genderValidity })
+        this.setState({ formValid: this.state.fieldValidity.enameValidity && this.state.fieldValidity.ageValidity && this.state.fieldValidity.genderValidity && this.state.fieldValidity.salaryValidity })
     }
 
     handleChange = (e) => {
